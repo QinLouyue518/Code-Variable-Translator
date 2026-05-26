@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Variable Translator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Code Variable Translator</h1>
+            <p class="subtitle">变量命名助手 — 中文 ↔ 英文变量名双向翻译</p>
+        </header>
+
+        <div class="cards">
+            <div class="card">
+                <h2><span class="icon">→</span> 中文 → 变量名</h2>
+                <div class="input-group">
+                    <input type="text" id="translateInput" placeholder="输入中文概念，如：用户登录时间戳" autofocus>
+                    <select id="contextSelect">
+                        <option value="variable">变量 (variable)</option>
+                        <option value="function">函数 (function)</option>
+                        <option value="class">类 (class)</option>
+                        <option value="constant">常量 (constant)</option>
+                        <option value="boolean">布尔值 (boolean)</option>
+                    </select>
+                    <button id="translateBtn">生成命名</button>
+                </div>
+                <div id="translateResult" class="result"></div>
+            </div>
+
+            <div class="card">
+                <h2><span class="icon">←</span> 变量名 → 中文</h2>
+                <div class="input-group">
+                    <input type="text" id="explainInput" placeholder="输入变量名，如：usrLgnTmstmp">
+                    <button id="explainBtn">解释含义</button>
+                </div>
+                <div id="explainResult" class="result"></div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>查询历史</h3>
+            <div id="historyList" class="history-list"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
